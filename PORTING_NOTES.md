@@ -21,3 +21,10 @@ Ported for **Minecraft: Java Edition 1.21.11+** (resource pack format 75+).
 
 ## Credits & permissions
 See [`readme.txt`](readme.txt) and original author notes in [`bedrock_source/readme.txt`](bedrock_source/readme.txt). Redistribution/modification/commercial use restrictions from the original author apply.
+
+## Forge mod packaging (added)
+- Converted into a **Forge mod** project targeting **Minecraft 1.21.11** / **Forge 61.2.5** (Java 21).
+- Mod ID: `alyaliveui` (client-side resource mod).
+- Assets are packaged under `src/main/resources/assets/minecraft/`.
+- Build config: `build.gradle`, `settings.gradle`, `gradle.properties`, `src/main/resources/META-INF/mods.toml`.
+- Note: Gradle wrapper files (`gradlew`, `gradle/wrapper/*`) are not included; copy them from a matching Forge 1.21.11 MDK or generate with a local Gradle installation to build (`./gradlew build`).
