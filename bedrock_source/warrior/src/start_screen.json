@@ -1,0 +1,118 @@
+{
+  "namespace": "wui_start",
+  
+  "logo_margin1": {
+    "type": "panel",
+    "size": [ 0, 16 ]
+  },
+  
+  "logo": {
+    "type": "image",
+    "size": [ 300, "25%x" ],
+    "texture": "warrior/resources/images/title"
+  },
+  
+  "logo_margin": {
+    "type": "panel",
+    "size": [ 0, 16 ]
+  },
+  
+  "main_button@wui_buttons.normal_button": {
+    "$theme": "secondary",
+    "size": [ "95%", 25 ]
+  },
+  
+  "play_button@wui_start.main_button": {
+    "$theme": "primary",
+    "$pressed_button_name": "$play_button_target",
+    "$button_label_text": "menu.play",
+    "sound_name": "Button.primary.pressed",
+    "$icon":"warrior/resources/images/icons/play"
+  },
+  
+  "achievements_button@wui_start.main_button": {
+    "$pressed_button_name": "button.menu_achievements",
+    "$button_label_text": "menu.achievements",
+    "$icon":"warrior/resources/images/icons/achievement"
+  },
+  
+  "marketplace_button@wui_start.main_button": {
+    "$pressed_button_name": "button.menu_store",
+    "$button_label_text": "menu.store", 
+    "$icon":"warrior/resources/images/icons/marketplace"
+  },
+  
+  "change_skin_button@wui_start.main_button": {
+    "$pressed_button_name": "button.to_profile_screen",
+    "$button_label_text": "profileScreen.header",
+    "$icon":"warrior/resources/images/icons/skin"
+  },
+  
+  "settings_button@wui_start.main_button": {
+    "$pressed_button_name": "button.menu_settings",
+    "$button_label_text": "menu.settings",
+    "$icon":"warrior/resources/images/icons/setting"
+  },
+  
+  "margin": {
+    "size": [ 0, 2 ],
+    "type": "panel"
+  },
+  
+  "left_buttons_panel": {
+    "type": "stack_panel",
+    "size": [ 160, "80%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset":[20,0],
+    "controls": [
+      {
+        "logo_margin1@wui_start.logo_margin1": {}
+      },
+      {
+        "logo@wui_start.logo": {}
+      },
+      {
+        "logo_margin@wui_start.logo_margin": {}
+      },
+      {
+        "play_button@wui_start.play_button": {}
+      },
+      {
+        "01@wui_start.margin": {}
+      },
+      {
+        "settings_button@wui_start.settings_button": {}
+      },
+      {
+        "02@wui_start.margin": {}
+      },
+            {
+        "change_skin_button@wui_start.change_skin_button": {}
+      },
+      {
+        "03@wui_start.margin": {}
+      },
+      {
+        "marketplace_button@wui_start.marketplace_button": {}
+      },
+      {
+        "04@wui_start.margin": {}
+      },
+      {
+        "achievements@wui_start.achievements_button": {}
+      }
+
+    ]
+  },
+  
+  "start_screen_content": {
+    "type": "panel",
+    "size": "$main_menu_size",
+    "controls": [
+      {
+        "left_buttons_panel@wui_start.left_buttons_panel": {}
+      }
+    ]
+  }
+}

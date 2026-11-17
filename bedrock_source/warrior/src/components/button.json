@@ -1,0 +1,186 @@
+{
+  "namespace": "wui_buttons",
+  
+  "icon": {
+    "type": "image",
+    "texture": "$icon",
+    "$icon|default": "",
+    "layer": 5
+  },
+  
+  "button_state_image": {
+    "type": "image",
+    "texture": "$button_state_texture",
+    "$button_state_texture|default": ""
+  },
+  
+  "button_state_panel": {
+    "type": "panel",
+    "size": "$button_panel_size",
+    "$button_content|default": [],
+    "$selection_border_visible|default": false,
+    "variables": [
+      {
+        "requires": "$nested",
+        "$button_panel_size": [ "100%", "100% + 1.5px" ]
+      }
+    ],
+    "$button_panel_size|default": [ "100%", "100%" ],
+    "$nested|default": false,
+    "controls": [
+      {
+        "image@wui_buttons.button_state_image": {}
+      },
+      {
+        "image@wui_buttons.icon": {
+          "anchor": "top_left",
+          "size": [16, 16],
+          "offset":"$icon_offset"
+        }
+      },
+      {
+        "label@wui_buttons.bound_button_label": {
+          "layer": 1
+        }
+      },
+      {
+        "button_content": {
+          "type": "panel",
+          "controls": "$button_content"
+        }
+      },
+      {
+        "selection_border@wui_buttons.selection_border": {
+          "ignored": "(not $selection_border_visible)"
+        }
+      }
+    ]
+  },
+  
+  "bound_button_label": {
+    "type": "label",
+    "text": "$button_label_text",
+    "offset": "$label_offset",
+    "color": "$text_color",
+    "font_type": "$font_type",
+    "shadow": "$text_shadow",
+    "$font_type|default": "normal",
+    "$text_shadow|default": false,
+    "$label_offset|default": [ 0, -1 ],
+    "variables": [
+      {
+        "requires": "(not $text_data_bound)",
+        "$label_bindings": []
+      }
+    ],
+    "$button_label_text|default": "",
+    "$text_color|default": "white",
+    "$text_data_bound|default": "",
+    "bindings": "$label_bindings",
+    "$label_bindings|default": []
+  },
+  
+  "primary_button_assets": {
+    "type": "panel",
+    "$text_color": "white",
+    "controls": [
+      {
+        "normal@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/primary",
+          "$normal_state": true,
+          "$icon_offset":[-60,-2]
+        }
+      },
+      {
+        "active@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/primary",
+          "$selection_border_visible": "(not $touch)",
+          "$active_state": true,
+          "$icon_offset":[-60,-2]
+        }
+      },
+      {
+        "focus@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/primary_focus",
+          "$label_offset": [ 0, 2 ],
+           "$icon_offset":[-60,2],
+          "$focus_state": true
+        }
+      },
+      {
+        "disabled@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/primary_disabled",
+          "$disabled_state": true
+        }
+      }
+    ]
+  },
+  
+  "secondary_button_assets": {
+    "type": "panel",
+    "$text_color": [ 0.22, 0.22, 0.22 ],
+    "controls": [
+      {
+        "normal@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/secondary",
+          "$normal_state": true,
+          "$icon_offset":[-60,-2]
+        }
+      },
+      {
+        "active@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/secondary",
+          "$selection_border_visible": "(not $touch)",
+          "$active_state": true,
+            "$icon_offset":[-60,-2]
+        }
+      },
+      {
+        "focus@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/secondary_focus",
+          "$label_offset": [ 0, 2 ],
+          "$focus_state": true,
+          "$icon_offset":[-60,2]
+        }
+      },
+      {
+        "disabled@wui_buttons.button_state_panel": {
+          "$button_state_texture": "warrior/resources/buttons/secondary_disabled",
+          "$disabled_state": true
+        }
+      }
+    ]
+  },
+  
+  "normal_button@common.button": {
+    "$theme|default": "secondary",
+    "default_control": "normal",
+    "hover_control": "active",
+    "pressed_control": "focus",
+    "locked_control": "disabled",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "focused"
+      }
+    ],
+    "controls": [
+      {
+        "secondary@wui_buttons.secondary_button_assets": {
+          "ignored": "(not ($theme = 'secondary'))"
+        }
+      },
+      {
+        "primary@wui_buttons.primary_button_assets": {
+          "ignored": "(not ($theme = 'primary'))"
+        }
+      }
+    ]
+  }
+}

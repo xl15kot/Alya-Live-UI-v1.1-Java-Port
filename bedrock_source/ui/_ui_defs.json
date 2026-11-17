@@ -1,0 +1,12 @@
+{
+    "ui_defs": [
+	"warrior/src/animations/fade_animation.json",
+    "warrior/src/animations/menu_animation.json",
+    "warrior/src/components/button.json",
+    "warrior/src/components/screen.json",
+    "warrior/src/play_screen.json",
+    "warrior/src/start_screen.json",
+    "warrior/src/world_templates_screen.json",
+    "rg_bg/risab_gamerz.json"
+    ]
+  }

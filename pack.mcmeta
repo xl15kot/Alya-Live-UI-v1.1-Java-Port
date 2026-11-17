@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Alya Live UI v1.1 - Java Edition port (1.21.11+)",
+    "pack_format": 75,
+    "supported_formats": {
+      "min_inclusive": 75,
+      "max_inclusive": 99
+    }
+  }
+}

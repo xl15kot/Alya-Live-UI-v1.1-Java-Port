@@ -1,0 +1,16 @@
+{
+  "namespace": "wui_fade_animation",
+  
+  "fade_in_for_sections": {
+    "anim_type": "alpha",
+    "from": 0,
+    "to": 1,
+    "duration": 0.25,
+    "resettable": true,
+    "scale_from_starting_alpha": true,
+    "easing": "linear",
+    "play_event": "$play_event_button_name",
+    "reset_event": "$play_event_button_name",
+    "$play_event_button_name|default": ""
+  }
+}

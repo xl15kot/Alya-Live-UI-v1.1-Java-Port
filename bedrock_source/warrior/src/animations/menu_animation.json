@@ -1,0 +1,34 @@
+{
+  "namespace": "wui_menu_animation",
+  
+  "open_push": {
+    "anim_type": "offset",
+    "from": [ "100%", 0 ],
+    "to": [ 0, 0 ],
+    "duration": 0.5,
+    "easing": "linear",
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+  
+  "open_pop@wui_menu_animation.open_push": {
+    "from": [ "-100%", 0 ],
+    "play_event": "screen.entrance_pop"
+  },
+  
+  "close_push": {
+    "anim_type": "offset",
+    "from": [ 0, 0 ],
+    "to": [ "-100%", 0 ],
+    "duration": 0.5,
+    "easing": "linear",
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+  
+  "close_pop@wui_menu_animation.close_push": {
+    "from": [ 0, 0 ],
+    "to": [ "100%", 0 ],
+    "play_event": "screen.exit_pop"
+  }
+}

@@ -1,0 +1,180 @@
+{
+   "namespace":"progress",
+   
+   "progress_screen@common.base_screen":{
+    "$screen_bg_content": "rg_bg.rg_bg_panel",
+      "button_mappings":[
+         {
+            "from_button_id":"button.menu_cancel",
+            "to_button_id":"button.menu_exit",
+            "mapping_type":"global"
+         }
+      ]
+   },
+   "bottom_cancel_button@common_buttons.light_text_button":{
+      "$pressed_button_name":"button.menu_exit",
+      "$button_text":"gui.cancel",
+      "size":[
+         "100%",
+         "100%"
+      ],
+      "bindings":[
+         {
+            "binding_name":"#cancel_visible",
+            "binding_name_override":"#visible"
+         }
+      ]
+   },
+   "world_convert_modal_progress_screen_content":{
+      "type":"panel",
+      "layer":3,
+      "controls":[
+         {
+            "world_modal_progress_panel@progress.world_modal_progress_panel":{
+               
+            }
+         },
+         {
+            "popup_dialog_factory@progress.popup_dialog_factory":{
+               
+            }
+         }
+      ]
+   },
+   "world_save_modal_progress_screen_content":{
+      "type":"panel",
+      "controls":[
+         {
+            "world_modal_progress_panel@progress.world_modal_progress_panel":{
+               
+            }
+         },
+         {
+            "save_@progress.auto_save":{
+               "offset":[
+                  0,
+                  55
+               ]
+            }
+         },
+         {
+            "popup_dialog_factory@progress.popup_dialog_factory":{
+               
+            }
+         }
+      ]
+   },
+
+   "new_loading_animation": {
+      "anim_type": "flip_book",
+      "initial_uv": [ 0, 0 ],
+      "frame_count": 8,
+      "frame_step": 8,
+      "fps": 8,
+      "reversible": true,
+      "easing": "linear"
+    },
+
+   "world_modal_progress_panel":{
+      "type":"panel",
+      "size":[
+         "100%",
+         "100%"
+      ],
+      "variables":[
+         {
+            "requires":"$desktop_screen",
+            "$button_state_default_base":"common.button_state_default",
+            "$button_state_hover_base":"common.button_state_hover",
+            "$button_state_pressed_base":"common.button_state_pressed"
+         },
+         {
+            "requires":"$pocket_screen",
+            "$button_state_default_base":"common-classic.button_state_default",
+            "$button_state_hover_base":"common-classic.button_state_hover",
+            "$button_state_pressed_base":"common-classic.button_state_pressed"
+         }
+      ],
+      "controls":[
+         {
+            "loading":{
+               "type":"panel",
+               "size":[
+                  "90%",
+                  "50%c"
+               ],
+               "controls":[
+                  {
+                     "loading_text": {
+                        "type": "label",
+                        "text": "Best Anime Girl",
+                        "font_type": "MinecraftTen",
+                        "offset": [ 0, -20 ]
+                     }
+                  },
+                  {
+                    "new_loading": {
+                      "type": "image",
+                      "texture": "textures/debug/loading",
+                      "offset": [0, 20 ],
+                      "size": [ 75, 75 ],
+                      "uv_size": [ 20, 20 ],
+                      "color": "@rainbow.rgb_frames_01",
+                      "uv": "@new_loading_animation",
+                      "disable_anim_fast_forward": true,
+                      "layer": 1
+                     }
+                  }
+               ]
+            }
+         },
+         {
+            "spacer_0":{
+               "type":"panel",
+               "size":[
+                  0,
+                  5
+               ]
+            }
+         },
+         {
+            "spacer_1":{
+               "type":"panel",
+               "size":[
+                  0,
+                  5
+               ],
+               "bindings":[
+                  {
+                     "binding_name":"#cancel_visible",
+                     "binding_name_override":"#visible"
+                  }
+               ]
+            }
+         },
+         {
+            "cancel_button":{
+               "type":"panel",
+               "size":[
+                  "100%",
+                  "100%c"
+               ],
+               "controls":[
+                  {
+                     "modal_button_panel@progress.bottom_cancel_button":{
+                        "size":[
+                           170,
+                           21
+                        ],
+                        "offset":[
+                           0,
+                           55
+                        ]
+                     }
+                  }
+               ]
+            }
+         }
+      ]
+   }
+}

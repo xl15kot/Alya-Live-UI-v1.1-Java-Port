@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "§d§o~By RisabGamerz , Theme- Alya",
+    "name": "§l§dAlya Live Ui",
+    "uuid": "cfee811c-d99c-4e48-856d-e87d431ca0f8",
+    "version": [ 1, 1, 0],
+    "min_engine_version": [ 1, 16, 0 ]
+  },
+  "modules": [
+    {
+      "description": "The Best Client",
+      "type": "resources",
+      "uuid": "c558c3b8-7aa4-47e5-b865-4dda773959e5",
+      "version": [ 1, 1, 0]
+    }
+  ]
+}
